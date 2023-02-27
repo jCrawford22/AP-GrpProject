@@ -1,9 +1,7 @@
 package view;
 
 import java.awt.Button;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
+
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -23,7 +21,6 @@ public class HomeDashboard {
 	public JButton studentButton;
 	public JButton staffButton;
 	public JLabel header;
-	public GridBagConstraints gbc;
 	
 	//GUI Method
 	public void homeDashboardGUI() {
@@ -44,6 +41,7 @@ public class HomeDashboard {
 	 	 buttonPanel.add(studentButton);
 	 	 buttonPanel.add(staffButton);
 	 	 
+	 	
 	 	 //adding panels to main HomePanel
 	 	 homePanel.add(headerPanel);
 	 	 homePanel.add(buttonPanel);
