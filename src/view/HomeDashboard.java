@@ -11,7 +11,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class HomeDashboard {
 
@@ -24,6 +25,8 @@ public class HomeDashboard {
 	public JButton staffButton;
 	public JLabel header;
 	public GridBagConstraints gbc;
+	
+	private static final Logger logger =LogManager.getLogger(HomeDashboard.class);
 	
 	//GUI Method
 	public void homeDashboardGUI() {
@@ -38,7 +41,7 @@ public class HomeDashboard {
 		 
 	    //Using a BoxLayout
 	 	 homePanel.setLayout(new BoxLayout(homePanel, BoxLayout.PAGE_AXIS));
-		
+	 	logger.info("system started");
 	 	 //adding components to layout
 	 	 headerPanel.add(header);
 	 	 buttonPanel.add(studentButton);
@@ -59,6 +62,15 @@ public class HomeDashboard {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
        HomeDashboard hb = new HomeDashboard();
+       logger.info("system started");
        hb.homeDashboardGUI();
+       logger.info("system started");
+       logger.info("Test Info message");
+		logger.debug("Test Debug message");
+		logger.error("Test error message");
+		logger.trace("Test trace message");
+		logger.fatal("test fatal message");
+		logger.warn("Test Warning message");
+		
  }
 }
