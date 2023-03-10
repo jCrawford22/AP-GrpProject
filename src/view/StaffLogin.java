@@ -1,17 +1,12 @@
 package view;
 
 import java.awt.Color;
-import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.PseudoColumnUsage;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.HashMap;
-import java.util.Scanner;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -20,14 +15,10 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
-import javax.swing.plaf.basic.BasicArrowButton;
-import javax.swing.plaf.basic.BasicInternalFrameTitlePane.SystemMenuBar;
-
-import com.mysql.cj.exceptions.RSAException;
 
 import factories.DBConnection;
 
-public class StudentLogin implements ActionListener{
+public class StaffLogin implements ActionListener {
 
 	public JFrame frame;
 	public JPanel mainPanel;
@@ -35,86 +26,81 @@ public class StudentLogin implements ActionListener{
 	public JPanel usernamePanel;
 	public JPanel passwordPanel;
 	public JPanel buttonPanel;
-	public JButton loginButton;
+	public JButton staffloginButton;
 	public JButton resetButton;
 	public JLabel header;
-	public JLabel username;
+	public JLabel staffusername;
 	public JLabel passwordJLabel;
-	public JTextField usernameField;
-	public JPasswordField passwordField;
-	public BasicArrowButton backArrowButton;
+	public JTextField staffusernameField;
+	public JPasswordField staffpasswordField;
 
-
-   StaffLogin stafflog = new StaffLogin();
+	 
 	DBConnection DB;
 	public Connection dbconn;
-	//hashmap copy of studentLoginInfo
-	public StudentLogin() {
+	
+	public StaffLogin() {
 		dbconn = DBConnection.getdatabaseConnection();
 		if (dbconn != null) {
 			System.out.println("Database Connected");
 		}
 	}
-	
-	public void StudentLoginGUI() {
-		//initialization of components
-		frame = new JFrame("Student Login");
+	public void StaffGUI() {
+		frame = new JFrame("Staff Login");
 		mainPanel = new JPanel();
 		headerPanel = new JPanel();
 		usernamePanel = new JPanel();
 		passwordPanel = new JPanel();
 		buttonPanel = new JPanel();
-		header = new JLabel("Student Login");
-		username = new JLabel("Student ID:");
-		usernameField = new JTextField(50);
-		usernameField.setColumns(20);
+		header = new JLabel("Staff Login");
+		staffusername = new JLabel("Staff ID:");
+		staffusernameField = new JTextField(50);
+		staffusernameField.setColumns(20);
 		passwordJLabel = new JLabel("Password:");
-		passwordField = new JPasswordField(50);
-		passwordField.setColumns(20);
-		loginButton = new JButton("Login");
-		loginButton.addActionListener(this);
+		staffpasswordField = new JPasswordField(50);
+		staffpasswordField.setColumns(20);
+		staffloginButton = new JButton("Login");
+		staffloginButton.addActionListener(this);
 		resetButton = new JButton("Reset");
 		resetButton.setBackground(Color.RED);
+		resetButton.setOpaque(true);
 		resetButton.addActionListener(this);
-		backArrowButton = new BasicArrowButton(BasicArrowButton.SOUTH_WEST);
+		
 		//setting the layout of the mainPanel
 		mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.PAGE_AXIS));
 		
 		headerPanel.add(header);
-		usernamePanel.add(username);
-		usernamePanel.add(usernameField);
+		usernamePanel.add(staffusername);
+		usernamePanel.add(staffusernameField);
 		passwordPanel.add(passwordJLabel);
-		passwordPanel.add(passwordField);
-		buttonPanel.add(loginButton);
+		passwordPanel.add(staffpasswordField);
+		buttonPanel.add(staffloginButton);
 		buttonPanel.add(resetButton);
-		buttonPanel.add(backArrowButton);
 		mainPanel.add(headerPanel);
 		mainPanel.add(usernamePanel);
 		mainPanel.add(passwordPanel);
 		mainPanel.add(buttonPanel);
 		
 		
-		frame.setSize(600,600);
+		frame.setSize(400,400);
 		frame.setVisible(true);
 		frame.add(mainPanel);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		
 	}
-	
+
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
-		if (e.getSource() == loginButton) {
-			String userID = usernameField.getText();
-			String password = String.valueOf(passwordField.getPassword());
+		if (e.getSource() == staffloginButton) {
+			String staffuserID = staffusernameField.getText();
+			String staffpassword = String.valueOf(staffpasswordField.getPassword());
 			try {
 				Statement stm = dbconn.createStatement();
-				String query = "select * from studentlogin where studentid='" + userID + "' and password='" + password + "'";
+				String query = "select * from stafflogin where staffid='" + staffuserID + "' and password='" + staffpassword + "'";
 				ResultSet rs = stm.executeQuery(query);
 				if (rs.next()) {
 					frame.dispose();
-					stafflog.StaffGUI();
 				}
 			} catch (SQLException e2) {
 				e2.printStackTrace();
@@ -122,13 +108,9 @@ public class StudentLogin implements ActionListener{
 			
 		}
 		if (e.getSource() == resetButton) {
-			usernameField.setText("");
-			passwordField.setText("");
+			staffusernameField.setText("");
+			staffpasswordField.setText("");
 		}
-			
-			
 		
 	}
-
-	
 }

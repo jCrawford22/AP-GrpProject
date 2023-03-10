@@ -1,7 +1,9 @@
 package view;
 
 import java.awt.Button;
-
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.HashMap;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -11,7 +13,7 @@ import javax.swing.JPanel;
 
 
 
-public class HomeDashboard {
+public class HomeDashboard implements ActionListener {
 
 	//declaration of Variables for HomeDashboard
 	public JFrame frame;
@@ -21,6 +23,13 @@ public class HomeDashboard {
 	public JButton studentButton;
 	public JButton staffButton;
 	public JLabel header;
+	public JLabel messageLabel;
+	StudentLogin stlogin = new StudentLogin();
+	StaffLogin stafflogin = new StaffLogin();
+	
+
+		
+
 	
 	//GUI Method
 	public void homeDashboardGUI() {
@@ -31,8 +40,10 @@ public class HomeDashboard {
 		 headerPanel = new JPanel();
 		 header = new JLabel("Elite Java System");
 		 studentButton = new JButton("Student");
+		 studentButton.addActionListener(this);
 		 staffButton = new JButton("Staff");
-		 
+		 staffButton.addActionListener(this);
+		 messageLabel = new JLabel();
 	    //Using a BoxLayout
 	 	 homePanel.setLayout(new BoxLayout(homePanel, BoxLayout.PAGE_AXIS));
 		
@@ -45,18 +56,25 @@ public class HomeDashboard {
 	 	 //adding panels to main HomePanel
 	 	 homePanel.add(headerPanel);
 	 	 homePanel.add(buttonPanel);
-	 	 
+	 	 homePanel.add(messageLabel);
 	 	 //intializing frame components
-		 frame.setSize(400,400);
+		 frame.setSize(600,600);
 		 frame.setVisible(true);
 		 frame.add(homePanel);
 		 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		 
 	}
 	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-       HomeDashboard hb = new HomeDashboard();
-       hb.homeDashboardGUI();
- }
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
+		if (e.getSource() == staffButton) {
+			frame.dispose();
+			stafflogin.StaffGUI();
+		}else if (e.getSource() == studentButton) {
+			frame.dispose();
+			stlogin.StudentLoginGUI();
+		}
+		
+	}
 }
