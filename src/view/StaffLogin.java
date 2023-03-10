@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.Color;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -9,6 +10,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -33,7 +35,8 @@ public class StaffLogin implements ActionListener {
 	public JLabel passwordJLabel;
 	public JTextField staffusernameField;
 	public JPasswordField staffpasswordField;
-
+	public JButton backArrowButton;
+	public ImageIcon icon;
 	 
 	DBConnection DB;
 	public Connection dbconn;
@@ -64,6 +67,12 @@ public class StaffLogin implements ActionListener {
 		resetButton.setBackground(Color.RED);
 		resetButton.setOpaque(true);
 		resetButton.addActionListener(this);
+		icon = new ImageIcon(getClass().getResource("backarrowbutton.png"));
+		Image img = icon.getImage().getScaledInstance(15, 15, java.awt.Image.SCALE_SMOOTH);
+		icon = new ImageIcon(img);
+		backArrowButton = new JButton(icon);
+		backArrowButton.setActionCommand("back");
+		backArrowButton.addActionListener(this);
 		
 		//setting the layout of the mainPanel
 		mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.PAGE_AXIS));
@@ -73,6 +82,7 @@ public class StaffLogin implements ActionListener {
 		usernamePanel.add(staffusernameField);
 		passwordPanel.add(passwordJLabel);
 		passwordPanel.add(staffpasswordField);
+		buttonPanel.add(backArrowButton);
 		buttonPanel.add(staffloginButton);
 		buttonPanel.add(resetButton);
 		mainPanel.add(headerPanel);
@@ -112,5 +122,14 @@ public class StaffLogin implements ActionListener {
 			staffpasswordField.setText("");
 		}
 		
+
+		if (e.getSource() == backArrowButton) {
+			String cmd = e.getActionCommand();
+			 if (cmd.equals("back")) {
+		            frame.dispose();
+              HomeDashboard hb = new HomeDashboard();
+              hb.homeDashboardGUI();
+		        }
+		}
 	}
 }

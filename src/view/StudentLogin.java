@@ -2,6 +2,7 @@ package view;
 
 import java.awt.Color;
 import java.awt.Frame;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -14,6 +15,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -42,7 +44,8 @@ public class StudentLogin implements ActionListener{
 	public JLabel passwordJLabel;
 	public JTextField usernameField;
 	public JPasswordField passwordField;
-	public BasicArrowButton backArrowButton;
+	public JButton backArrowButton;
+	public ImageIcon icon;
 
 
    StaffLogin stafflog = new StaffLogin();
@@ -76,7 +79,12 @@ public class StudentLogin implements ActionListener{
 		resetButton = new JButton("Reset");
 		resetButton.setBackground(Color.RED);
 		resetButton.addActionListener(this);
-		backArrowButton = new BasicArrowButton(BasicArrowButton.SOUTH_WEST);
+		icon = new ImageIcon(getClass().getResource("backarrowbutton.png"));
+		Image img = icon.getImage().getScaledInstance(15, 15, java.awt.Image.SCALE_SMOOTH);
+		icon = new ImageIcon(img);
+		backArrowButton = new JButton(icon);
+		backArrowButton.setActionCommand("back");
+		backArrowButton.addActionListener(this);
 		//setting the layout of the mainPanel
 		mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.PAGE_AXIS));
 		
@@ -85,9 +93,9 @@ public class StudentLogin implements ActionListener{
 		usernamePanel.add(usernameField);
 		passwordPanel.add(passwordJLabel);
 		passwordPanel.add(passwordField);
+		buttonPanel.add(backArrowButton);
 		buttonPanel.add(loginButton);
 		buttonPanel.add(resetButton);
-		buttonPanel.add(backArrowButton);
 		mainPanel.add(headerPanel);
 		mainPanel.add(usernamePanel);
 		mainPanel.add(passwordPanel);
@@ -126,7 +134,14 @@ public class StudentLogin implements ActionListener{
 			passwordField.setText("");
 		}
 			
-			
+			if (e.getSource() == backArrowButton) {
+				String cmd = e.getActionCommand();
+				 if (cmd.equals("back")) {
+			            frame.dispose();
+                  HomeDashboard hb = new HomeDashboard();
+                  hb.homeDashboardGUI();
+			        }
+			}
 		
 	}
 
