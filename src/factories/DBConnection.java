@@ -22,9 +22,5 @@ public class DBConnection {
 		}
 		return myConnection;
 	}
-	 public static void main(String[] args) {
-			DBConnection connection = new DBConnection();
-			connection.getdatabaseConnection();
-		 
-			}
+
 }

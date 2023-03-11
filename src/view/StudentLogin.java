@@ -28,6 +28,7 @@ import javax.swing.plaf.basic.BasicInternalFrameTitlePane.SystemMenuBar;
 import com.mysql.cj.exceptions.RSAException;
 
 import factories.DBConnection;
+import view.StudentDashboard;
 
 public class StudentLogin implements ActionListener{
 
@@ -54,9 +55,6 @@ public class StudentLogin implements ActionListener{
 	//hashmap copy of studentLoginInfo
 	public StudentLogin() {
 		dbconn = DBConnection.getdatabaseConnection();
-		if (dbconn != null) {
-			System.out.println("Database Connected");
-		}
 	}
 	
 	public void StudentLoginGUI() {
@@ -116,18 +114,18 @@ public class StudentLogin implements ActionListener{
 		if (e.getSource() == loginButton) {
 			String userID = usernameField.getText();
 			String password = String.valueOf(passwordField.getPassword());
+			StudentDashboard sb = new StudentDashboard(userID);
 			try {
 				Statement stm = dbconn.createStatement();
 				String query = "select * from studentlogin where studentid='" + userID + "' and password='" + password + "'";
 				ResultSet rs = stm.executeQuery(query);
 				if (rs.next()) {
 					frame.dispose();
-					stafflog.StaffGUI();
+					sb.StudentDashboardGui();
 				}
 			} catch (SQLException e2) {
 				e2.printStackTrace();
 			}
-			
 		}
 		if (e.getSource() == resetButton) {
 			usernameField.setText("");

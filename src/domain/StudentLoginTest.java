@@ -34,10 +34,13 @@ public class StudentLoginTest {
 	
 	public void insert() {
 		try {
-			String query = "INSERT INTO stafflogin (staffid, password)" + "VALUES(?,?)";
+			String query = "INSERT INTO student (studentid, firstname, lastname, contactnumber, emailaddress)" + "VALUES(?,?,?,?,?)";
 			PreparedStatement preparedStmt = dbConnection.prepareStatement(query);
-			preparedStmt.setString(1, "216");
-			preparedStmt.setString(2, "Campbell");
+			preparedStmt.setString(1, "124");
+			preparedStmt.setString(2, "Justin");
+			preparedStmt.setString(3, "Alder");
+			preparedStmt.setString(4, "18764825567");
+			preparedStmt.setString(5, "justinalder@gmail.com");
 		    preparedStmt.execute();
 			 dbConnection.close();
 			System.out.println("Data added");

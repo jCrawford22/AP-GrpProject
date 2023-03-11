@@ -9,7 +9,6 @@ public class Driver {
 		// TODO Auto-generated method stub
        HomeDashboard homeboard = new HomeDashboard();
  homeboard.homeDashboardGUI();
-       
 	}
 
 }

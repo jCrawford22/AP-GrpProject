@@ -7,6 +7,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.security.PublicKey;
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -19,7 +22,7 @@ import javax.swing.JSplitPane;
 import factories.DBConnection;
 
 public class StudentDashboard implements ActionListener {
-	
+	StudentLogin stl = new StudentLogin();
 	DBConnection dbconn;
 	private Connection conn;
 	public JFrame frame;
@@ -38,13 +41,27 @@ public class StudentDashboard implements ActionListener {
 	public JButton button2;
 	private final int hGap = 25;
     private final int vGap = 25;
+    private static Statement stm;
+	public static ResultSet rSet;
+	public String firstname;
+	public String lastname;
+
 	
-	public StudentDashboard() {
-		
+	public StudentDashboard(String username) {
 		conn = DBConnection.getdatabaseConnection();
-		if (conn != null) {
-			System.out.println("Dashboard Connected");
+		String sql = "SELECT * FROM student WHERE studentid = '" + username + "'";
+		try {
+			stm = conn.createStatement();
+			rSet = stm.executeQuery(sql);
+			while (rSet.next()) {
+				 firstname = rSet.getString("firstname");
+				 lastname = rSet.getString("lastname");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
+		
+		
 	}
 	
 	public void StudentDashboardGui() {
@@ -59,12 +76,16 @@ public class StudentDashboard implements ActionListener {
 		usernameText = new JLabel();
 		dashboardText = new JLabel("Dashboard");
 		headerText = new JLabel("Student Dashboard");
+		usernameText = new JLabel();
+		usernameText.setText(firstname);
 		home = new JLabel("Home");
 		pastComplaints = new JLabel("Past Complaints");
 		pastQueries = new JLabel("Past Queries");
 		logoutButton = new JButton("Logout");
 		button1 = new JButton("btn1");
 		button2 = new JButton("btn2");
+		sidebarPanel.add(usernameText);
+		sidebarPanel.add(Box.createRigidArea(new Dimension(0, 25)));
 		sidebarPanel.add(dashboardText);
 		sidebarPanel.add(Box.createRigidArea(new Dimension(0, 25)));
 		sidebarPanel.add(home);
@@ -85,12 +106,7 @@ public class StudentDashboard implements ActionListener {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 	}
-	public static void main(String[] args) {
 	
-StudentDashboard sb = new StudentDashboard();
-sb.StudentDashboardGui();
-	}
-
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
