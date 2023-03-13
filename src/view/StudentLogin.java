@@ -25,9 +25,13 @@ import javax.swing.JTextField;
 import javax.swing.plaf.basic.BasicArrowButton;
 import javax.swing.plaf.basic.BasicInternalFrameTitlePane.SystemMenuBar;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.mysql.cj.exceptions.RSAException;
 
 import factories.DBConnection;
+import main.Driver;
 import view.StudentDashboard;
 
 public class StudentLogin implements ActionListener{
@@ -48,7 +52,8 @@ public class StudentLogin implements ActionListener{
 	public JButton backArrowButton;
 	public ImageIcon icon;
 
-
+	private static final Logger logger = LogManager.getLogger(Driver.class.getName());
+	
    StaffLogin stafflog = new StaffLogin();
 	DBConnection DB;
 	public Connection dbconn;
@@ -121,10 +126,12 @@ public class StudentLogin implements ActionListener{
 				ResultSet rs = stm.executeQuery(query);
 				if (rs.next()) {
 					frame.dispose();
+					logger.info("Student login successful");
 					sb.StudentDashboardGui();
 				}
 			} catch (SQLException e2) {
 				e2.printStackTrace();
+				logger.info("Student Login incorrect");
 			}
 		}
 		if (e.getSource() == resetButton) {
