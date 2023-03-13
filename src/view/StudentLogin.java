@@ -45,8 +45,8 @@ public class StudentLogin implements ActionListener{
 	public JLabel passwordJLabel;
 	public JTextField usernameField;
 	public JPasswordField passwordField;
-	public JButton backArrowButton;
-	public ImageIcon icon;
+	public static JButton backArrowButton;
+	public static ImageIcon icon;
 
 
    StaffLogin stafflog = new StaffLogin();

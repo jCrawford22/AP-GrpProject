@@ -35,8 +35,8 @@ public class StaffLogin implements ActionListener {
 	public JLabel passwordJLabel;
 	public JTextField staffusernameField;
 	public JPasswordField staffpasswordField;
-	public JButton backArrowButton;
-	public ImageIcon icon;
+	public static JButton backArrowButton;
+	public static ImageIcon icon;
 	 
 	DBConnection DB;
 	public Connection dbconn;
