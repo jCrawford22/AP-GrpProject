@@ -1,20 +1,17 @@
 package view;
 
 import java.awt.Button;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
-
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
-public class HomeDashboard {
+
+public class HomeDashboard implements ActionListener {
 
 	//declaration of Variables for HomeDashboard
 	public JFrame frame;
@@ -24,9 +21,13 @@ public class HomeDashboard {
 	public JButton studentButton;
 	public JButton staffButton;
 	public JLabel header;
-	public GridBagConstraints gbc;
+	public JLabel messageLabel;
+	StudentLogin stlogin = new StudentLogin();
+	StaffLogin stafflogin = new StaffLogin();
 	
-	private static final Logger logger =LogManager.getLogger(HomeDashboard.class);
+
+		
+
 	
 	//GUI Method
 	public void homeDashboardGUI() {
@@ -37,40 +38,41 @@ public class HomeDashboard {
 		 headerPanel = new JPanel();
 		 header = new JLabel("Elite Java System");
 		 studentButton = new JButton("Student");
+		 studentButton.addActionListener(this);
 		 staffButton = new JButton("Staff");
-		 
+		 staffButton.addActionListener(this);
+		 messageLabel = new JLabel();
 	    //Using a BoxLayout
 	 	 homePanel.setLayout(new BoxLayout(homePanel, BoxLayout.PAGE_AXIS));
-	 	logger.info("system started");
+		
 	 	 //adding components to layout
 	 	 headerPanel.add(header);
 	 	 buttonPanel.add(studentButton);
 	 	 buttonPanel.add(staffButton);
 	 	 
+	 	
 	 	 //adding panels to main HomePanel
 	 	 homePanel.add(headerPanel);
 	 	 homePanel.add(buttonPanel);
-	 	 
+	 	 homePanel.add(messageLabel);
 	 	 //intializing frame components
-		 frame.setSize(400,400);
+		 frame.setSize(600,600);
 		 frame.setVisible(true);
 		 frame.add(homePanel);
 		 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		 
 	}
 	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-       HomeDashboard hb = new HomeDashboard();
-       logger.info("system started");
-       hb.homeDashboardGUI();
-       logger.info("system started");
-       logger.info("Test Info message");
-		logger.debug("Test Debug message");
-		logger.error("Test error message");
-		logger.trace("Test trace message");
-		logger.fatal("test fatal message");
-		logger.warn("Test Warning message");
+	@Override
+	public void actionPerformed(ActionEvent e) {
 		
- }
+		if (e.getSource() == staffButton) {
+			frame.dispose();
+			stafflogin.StaffGUI();
+		}else if (e.getSource() == studentButton) {
+			frame.dispose();
+			stlogin.StudentLoginGUI();
+		}
+		
+	}
 }
