@@ -18,6 +18,9 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import factories.DBConnection;
 
 public class StaffLogin implements ActionListener {
@@ -41,10 +44,13 @@ public class StaffLogin implements ActionListener {
 	DBConnection DB;
 	public Connection dbconn;
 	
+	private static final Logger logger= LogManager.getLogger(DBConnection.class.getName());
+	
 	public StaffLogin() {
 		dbconn = DBConnection.getdatabaseConnection();
 		if (dbconn != null) {
 			System.out.println("Database Connected");
+			logger.info("database connected");
 		}
 	}
 	public void StaffGUI() {
@@ -111,9 +117,11 @@ public class StaffLogin implements ActionListener {
 				ResultSet rs = stm.executeQuery(query);
 				if (rs.next()) {
 					frame.dispose();
+					logger.info("Staff Login successfull" );
 				}
 			} catch (SQLException e2) {
 				e2.printStackTrace();
+				logger.error("Staff Login incorrect");
 			}
 			
 		}

@@ -1,1 +1,16 @@
-[INFO ] 2023-03-13 11:31:16.503 [main] Driver - Test Info message
+[INFO ] 2023-03-13 10:31:25.164 [main] Driver - Test info message
+[DEBUG] 2023-03-13 10:31:25.179 [main] Driver - Test Debug message
+[ERROR] 2023-03-13 10:31:25.181 [main] Driver - Test error message
+[TRACE] 2023-03-13 10:31:25.182 [main] Driver - Test trace message
+[FATAL] 2023-03-13 10:31:25.184 [main] Driver - Test fatal message
+[WARN ] 2023-03-13 10:31:25.185 [main] Driver - Test Warning message
+[INFO ] 2023-03-13 10:54:03.494 [main] Driver - Info test
+[INFO ] 2023-03-13 10:57:33.386 [main] Driver - Info test
+[INFO ] 2023-03-13 10:59:35.119 [main] Driver - Info test
+[INFO ] 2023-03-13 11:06:25.240 [main] Driver - Info test
+[INFO ] 2023-03-13 11:08:21.746 [main] Driver - Info test
+[INFO ] 2023-03-13 11:08:51.950 [main] Driver - Info test
+[INFO ] 2023-03-13 11:09:09.636 [main] Driver - Info test
+[INFO ] 2023-03-13 11:12:25.479 [main] Driver - Info test
+[INFO ] 2023-03-13 11:36:17.064 [main] Driver - Info test
+[INFO ] 2023-03-13 11:36:31.857 [AWT-EventQueue-0] Driver - Student login successful

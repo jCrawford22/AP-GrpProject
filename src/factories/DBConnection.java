@@ -3,6 +3,11 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+
+
 public class DBConnection {
 
 	private static Connection myConnection;
@@ -10,12 +15,17 @@ public class DBConnection {
 	private static String username = "root";
 	private static String password = "";
 	
+	private static final Logger logger= LogManager.getLogger(DBConnection.class.getName());
+	
 	public static Connection getdatabaseConnection() {
 		myConnection = null;
 		if(myConnection == null) {
 			try {
 				myConnection = DriverManager.getConnection(url, username,password);
-				System.out.println("Database connected");
+				
+				logger.info("database is connnected");
+				
+				
 			} catch (SQLException e) {
 				// TODO: handle exception
 			}
