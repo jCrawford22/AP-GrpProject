@@ -52,6 +52,71 @@ public class Query {
 	public Query() {
 		
 	}
+
+	public Query(int complaintid, String studentid, String category, String details, String date, int staffid) {
+		super();
+		this.complaintid = complaintid;
+		this.studentid = studentid;
+		this.category = category;
+		this.details = details;
+		this.date = date;
+		this.staffid = staffid;
+	}
+
+	public int getComplaintid() {
+		return complaintid;
+	}
+
+	public void setComplaintid(int complaintid) {
+		this.complaintid = complaintid;
+	}
+
+	public String getStudentid() {
+		return studentid;
+	}
+
+	public void setStudentid(String studentid) {
+		this.studentid = studentid;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	public String getDetails() {
+		return details;
+	}
+
+	public void setDetails(String details) {
+		this.details = details;
+	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+
+	public int getStaffid() {
+		return staffid;
+	}
+
+	public void setStaffid(int staffid) {
+		this.staffid = staffid;
+	}
+
+	@Override
+	public String toString() {
+		return "Query [complaintid=" + complaintid + ", studentid=" + studentid + ", category=" + category
+				+ ", details=" + details + ", date=" + date + ", staffid=" + staffid + "]";
+	}
+	
 	
 	
 
