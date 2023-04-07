@@ -14,3 +14,88 @@
 [INFO ] 2023-03-13 11:12:25.479 [main] Driver - Info test
 [INFO ] 2023-03-13 11:36:17.064 [main] Driver - Info test
 [INFO ] 2023-03-13 11:36:31.857 [AWT-EventQueue-0] Driver - Student login successful
+[INFO ] 2023-03-13 22:25:05.108 [main] Driver - Info test
+[INFO ] 2023-03-13 22:28:31.205 [main] Driver - Info test
+[INFO ] 2023-03-13 22:29:37.332 [AWT-EventQueue-0] Driver - Student login successful
+[INFO ] 2023-03-27 10:15:01.504 [main] Driver - Info test
+[INFO ] 2023-03-27 10:41:01.595 [main] Driver - Info test
+[INFO ] 2023-03-27 10:43:10.569 [main] Driver - Info test
+[INFO ] 2023-03-27 10:43:52.226 [main] Driver - Info test
+[INFO ] 2023-04-05 20:31:15.297 [main] Driver - Info test
+[INFO ] 2023-04-05 20:39:31.447 [main] Driver - Info test
+[INFO ] 2023-04-05 20:57:21.005 [main] Driver - Info test
+[INFO ] 2023-04-05 21:04:33.165 [main] Driver - Info test
+[INFO ] 2023-04-05 21:11:59.971 [main] Driver - Info test
+[INFO ] 2023-04-05 21:16:35.343 [main] Driver - Info test
+[INFO ] 2023-04-05 21:17:37.412 [main] Driver - Info test
+[INFO ] 2023-04-05 22:06:57.743 [main] Driver - Info test
+[INFO ] 2023-04-05 22:08:23.811 [main] Driver - Info test
+[INFO ] 2023-04-05 22:09:40.373 [main] Driver - Info test
+[INFO ] 2023-04-05 22:20:08.264 [main] Driver - Info test
+[INFO ] 2023-04-05 22:21:03.608 [main] Driver - Info test
+[INFO ] 2023-04-05 22:23:45.621 [main] Driver - Info test
+[INFO ] 2023-04-05 22:27:04.071 [main] Driver - Info test
+[INFO ] 2023-04-05 22:29:27.272 [main] Driver - Info test
+[INFO ] 2023-04-05 22:30:48.479 [main] Driver - Info test
+[INFO ] 2023-04-05 22:31:32.211 [main] Driver - Info test
+[INFO ] 2023-04-05 22:33:03.356 [main] Driver - Info test
+[INFO ] 2023-04-05 22:34:50.414 [main] Driver - Info test
+[INFO ] 2023-04-05 22:35:28.850 [main] Driver - Info test
+[INFO ] 2023-04-05 22:38:42.651 [main] Driver - Info test
+[INFO ] 2023-04-05 22:41:36.362 [main] Driver - Info test
+[INFO ] 2023-04-05 23:26:47.439 [main] Driver - Info test
+[INFO ] 2023-04-06 10:16:02.157 [main] Driver - Info test
+[INFO ] 2023-04-06 10:19:58.484 [main] Driver - Info test
+[INFO ] 2023-04-06 10:20:49.609 [main] Driver - Info test
+[INFO ] 2023-04-06 10:53:04.185 [main] Driver - Info test
+[INFO ] 2023-04-06 11:11:54.328 [main] Driver - Info test
+[INFO ] 2023-04-06 11:15:59.093 [main] Driver - Info test
+[INFO ] 2023-04-06 11:17:00.103 [main] Driver - Info test
+[INFO ] 2023-04-06 11:17:24.144 [main] Driver - Info test
+[INFO ] 2023-04-06 19:16:04.314 [main] Driver - Info test
+[INFO ] 2023-04-06 19:23:14.416 [main] Driver - Info test
+[INFO ] 2023-04-06 19:25:04.854 [main] Driver - Info test
+[INFO ] 2023-04-06 19:25:36.166 [main] Driver - Info test
+[INFO ] 2023-04-06 19:27:53.273 [main] Driver - Info test
+[INFO ] 2023-04-06 19:30:15.152 [main] Driver - Info test
+[INFO ] 2023-04-06 19:31:00.211 [main] Driver - Info test
+[INFO ] 2023-04-06 19:35:49.608 [main] Driver - Info test
+[INFO ] 2023-04-06 19:37:09.972 [main] Driver - Info test
+[INFO ] 2023-04-06 20:17:34.653 [main] Driver - Info test
+[INFO ] 2023-04-06 20:46:02.333 [main] Driver - Info test
+[INFO ] 2023-04-06 21:11:16.340 [main] Driver - Info test
+[INFO ] 2023-04-06 21:11:57.170 [main] Driver - Info test
+[INFO ] 2023-04-06 21:15:13.316 [main] Driver - Info test
+[INFO ] 2023-04-06 21:16:22.712 [main] Driver - Info test
+[INFO ] 2023-04-06 21:17:08.722 [main] Driver - Info test
+[INFO ] 2023-04-06 21:28:04.301 [main] Driver - Info test
+[INFO ] 2023-04-06 21:44:24.503 [main] Driver - Info test
+[INFO ] 2023-04-06 21:44:57.737 [main] Driver - Info test
+[INFO ] 2023-04-06 21:45:17.929 [main] Driver - Info test
+[INFO ] 2023-04-06 21:45:50.431 [main] Driver - Info test
+[ERROR] 2023-04-06 21:45:50.505 [main] Driver - Error in retrieving record
+[INFO ] 2023-04-06 21:46:52.192 [main] Driver - Info test
+[INFO ] 2023-04-06 21:46:52.241 [main] Driver - Complaint records retrieved
+[INFO ] 2023-04-06 21:49:12.267 [main] Driver - Info test
+[INFO ] 2023-04-06 21:49:12.317 [main] Driver - Complaint records retrieved
+[INFO ] 2023-04-06 22:23:41.094 [main] Driver - Info test
+[INFO ] 2023-04-06 22:23:41.145 [main] Driver - Complaint records retrieved
+[INFO ] 2023-04-06 22:28:04.270 [main] Driver - Info test
+[INFO ] 2023-04-06 22:28:04.326 [main] Driver - Complaint records retrieved
+[INFO ] 2023-04-07 10:58:31.457 [main] Driver - Info test
+[INFO ] 2023-04-07 11:06:57.425 [main] Driver - Info test
+[INFO ] 2023-04-07 11:06:57.483 [main] Driver - Complaint records retrieved
+[INFO ] 2023-04-07 11:09:48.650 [main] Driver - Info test
+[INFO ] 2023-04-07 11:13:07.527 [main] Driver - Info test
+[INFO ] 2023-04-07 11:13:10.067 [main] Driver - record updated
+[INFO ] 2023-04-07 11:15:17.045 [main] Driver - Info test
+[INFO ] 2023-04-07 11:15:21.847 [main] Driver - record updated
+[INFO ] 2023-04-07 11:27:08.873 [main] Driver - Info test
+[INFO ] 2023-04-07 11:27:20.101 [main] Driver - Info test
+[INFO ] 2023-04-07 11:27:45.724 [main] Driver - Info test
+[INFO ] 2023-04-07 11:29:08.216 [main] Driver - Info test
+[INFO ] 2023-04-07 11:30:00.548 [main] Driver - Info test
+[INFO ] 2023-04-07 11:33:50.057 [main] Driver - Info test
+[INFO ] 2023-04-07 11:33:52.315 [main] Driver - Student record retrieved
+[INFO ] 2023-04-07 11:35:29.284 [main] Driver - Info test
+[INFO ] 2023-04-07 11:35:31.390 [main] Driver - Student record retrieved
